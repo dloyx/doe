@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        
+        <!-- Photo principale de l'annonce -->
+        <div class="row">
+            <div class="col-md-12">
+                <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
+            </div>
+        </div>
+        
+        <br>
+        
+        <!-- Informations principales -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <%= image_tag avatar_url(@engine.user), class:"img-circle avatar-large" %>
+                        <br>
+                        <br>
+                        <%= @engine.user.fullname %>
+                    </div>
+                    <div class="col-md-9">
+                        <h4><%= @engine.engine_identity %></h4>
+                        <%= @engine.engine_name %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- Formulaire de réservation -->
+                <%= render 'saves/form' %>
+            </div>
+        </div>
+        
+        <!-- Description -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2> </h2>
+                <p><%= @engine.engine_define %></p>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</div>

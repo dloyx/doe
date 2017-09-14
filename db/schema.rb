@@ -11,7 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903141811) do
+ActiveRecord::Schema.define(version: 20170906015104) do
+
+  create_table "applis", force: :cascade do |t|
+    t.string   "application_name"
+    t.text     "application_description"
+    t.string   "application_question"
+    t.text     "define1"
+    t.text     "define2"
+    t.text     "define3"
+    t.text     "define4"
+    t.text     "define5"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "engines", force: :cascade do |t|
+    t.string   "engine_name"
+    t.text     "engine_description"
+    t.string   "engine_identity"
+    t.text     "engine_define"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "engines", ["user_id"], name: "index_engines_on_user_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "engine_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "photos", ["engine_id"], name: "index_photos_on_engine_id"
+
+  create_table "saves", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "engine_id"
+    t.datetime "start_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "saves", ["engine_id"], name: "index_saves_on_engine_id"
+  add_index "saves", ["user_id"], name: "index_saves_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

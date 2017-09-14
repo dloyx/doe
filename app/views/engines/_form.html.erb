@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Nouveau formulaire
+    </div>
+    <div class="panel-body">
+        <div class="container">
+            
+            <%= form_for @engine, html: {multipart: true} do |f| %>
+                <%= render 'layouts/errors' %> 
+                <div class="row">
+                        <div class="form-group">
+                            <label>Nouveau formulaire</label>
+                            <%= f.text_field :engine_name, placeholder: "Nouveau formulaire", class: "form-control" %>
+                        </div>
+                    </div>
+                        
+                <div class="row">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <%= f.text_area :engine_description, rows:3, placeholder: "Nouveau formulaire",
+                            class: "form-control" %>
+                        </div>
+                    </div>
+
+                <div class="row">
+                        <div class="form-group">
+                            <label>Nouveau formulaire</label>
+                            <%= f.text_field :engine_identity, placeholder: "Nouveau formulaire", class: "form-control" %>
+                        </div>
+                    </div>
+                    
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <span class="btn btn-default btn-file">
+                            <i class = "fa fa-cloud-upload fa-lg"></i> Téléchargez une photo de couverture
+                            <%= file_field_tag "images[]", type: :file, multiple: true %>
+                            </span>
+                        </div>
+                    </div>
+                 </div>
+                
+                <div id="photos"><%= render 'photos/list' %></div>
+                
+                <div class="actions">
+                    <%= f.submit "Publier", class: "btn btn-primary"%>
+                </div>
+            <% end %>
+            
+        </div>
+    </div>
+</div>

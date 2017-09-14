@@ -1,0 +1,6 @@
+<%= form_for([@engine, @engine.saves.new]) do |f| %>
+    <%= f.text_field :start_date %>
+    <%= f.hidden_field :engine_id, value: @engine.id %>
+	<br/>
+	<%= f.submit "Sauvegarde de la publication", class: "btn btn-primary" %>
+<% end %>

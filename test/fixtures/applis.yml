@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  application_name: MyString
+  application_description: MyText
+  application_question: MyString
+  define1: MyText
+  define2: MyText
+  define3: MyText
+  define4: MyText
+  define5: MyText
+
+two:
+  application_name: MyString
+  application_description: MyText
+  application_question: MyString
+  define1: MyText
+  define2: MyText
+  define3: MyText
+  define4: MyText
+  define5: MyText

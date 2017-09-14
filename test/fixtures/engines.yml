@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  engine_name: MyString
+  engine_description: MyText
+  engine_identity: MyString
+  engine_define: MyText
+  user_id: 
+
+two:
+  engine_name: MyString
+  engine_description: MyText
+  engine_identity: MyString
+  engine_define: MyText
+  user_id: 
